@@ -1,0 +1,20 @@
+clone the git repo 
+git clone giturl (terraformsingleinstance)
+
+if u want to remove the directory 
+- rmdir /S /Q terraformsingleinstance
+
+if u want to clone the git in a specific directory 
+- git clone gitrepo path
+
+to open the terraform files in the visual studio 
+go to the path and give code .
+- code .	# this will open the code in visual studio 
+
+open the terminal 
+- terraform init 	#initialize the terraform 
+
+- terraform plan 	# dry runs the script
+
+- to use the tfvars otherthan terraform.tfvars , we should use 
+- terraform plan --var-file example.tfvars

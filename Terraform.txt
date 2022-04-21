@@ -1,0 +1,93 @@
+Infrastructure as code :: Terraform 
+``````````````````````
+for aws - cloud formation 
+for azure - ARM Templates
+for multiple vendors -- Terraform 
+
+Terraform  advantages:: 
+`````````````````````
+1. Terraform is simple to understand
+2. can be used for multiple vendors 
+3. config can be split into multiple files
+4. can perform dry run easily
+5. Importing of manual resources
+6. Resuable code with modules
+
+Installation::
+````````````
+- To install terraform we need to download the .exe file -> install -> keep the file in c:/Terraform -> open cmd -> sysdm.cpl -> edit and add c:/terraform -> terraform version 
+- if the terraform is installed successfull then terraform version cmnd will run and shows the installed terraform version 
+
+cloning repo into our system: 
+- gitclone <repourl> destination directory -> code . -> open the visual studio 
+
+Terraform Files::
+````````````````
+- for configuration -- main.tf and other tf files eg: vpc.tf , sec.tf
+- for variables -- variables.tf -- variables will be define as var 
+- for variables values -- terraform.tfvars
+
+- in the main.tf we give the provider , resources and all those things in the main.tf
+
+to dry run the terraform script we use terraform plan 
+
+to deploy the terraform script we use terraform apply
+- to run the -- terraform apply --var-file fteraaform.tfvars
+- to skip the yes option after apply we use auto approve 
+	terraform apply --var-file fteraaform.tfvars --auto-approve
+
+- terraform is idempotent -- means we can apply many times 
+
+- after terraform apply there is a tfstate file will create and what ever we deploy it will update in the .tfstate file
+- We pass values in the terraform by usning .tfvars
+
+- terraform plan --var-file prod.tfvars		#input values will be taken from the prod.tfvars
+
+- terraform state list 	-- to know what we have deployed previously 
+
+- we can run different servers on the same folder by using -- workspace
+-- terraform workspace show 	-- to display workspace
+-- terraform wokrspace list 	-- to list the workspace
+-- terraform workspace new prod	-- created a prod server inside the workspace
+-- terraform workspace new dev	-- created a dev server inside the workspace
+-- terraform workspace select prod 	-- switched to prod server inside the workspace
+
+by applying the terraform apply inside the server , the state files will create inside the server , so that we can run multiple servers in the same folder
+
+- after reintialize the backend we need to initiate the terraform in that , terraform init
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
